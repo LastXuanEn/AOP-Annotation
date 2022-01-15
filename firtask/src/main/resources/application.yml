@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: mysynctask
+
+server:
+  port: 9090
