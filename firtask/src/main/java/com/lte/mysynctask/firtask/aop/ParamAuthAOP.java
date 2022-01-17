@@ -22,6 +22,7 @@ public class ParamAuthAOP {
     private void pointCheck() {
     }
 
+    //环绕通知，注解信息中为切点
     @Around("pointCheck()")
     public Object checkAround(ProceedingJoinPoint thisJoinPoint) throws Throwable {
         //获取入参
@@ -48,7 +49,7 @@ public class ParamAuthAOP {
         return "入参不能为1";
     }
 
-
+    //外部鉴权
     private Boolean checkAroundInner(Object[] args) {
 
         StringBuffer buffer = new StringBuffer();
@@ -62,6 +63,7 @@ public class ParamAuthAOP {
         return true;
     }
 
+    //内部鉴权
     private Boolean checkAroundOut(Object[] args) {
         StringBuffer buffer = new StringBuffer();
         for (Object arg : args) {
